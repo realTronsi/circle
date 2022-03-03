@@ -23,7 +23,7 @@ public class Test {
             TargetCorner p4 = testPoints.get(i+3);
 
             // following canvas axises (down is larger)
-            double midY = (p1.y + p2.y + p3.y + p4.y) / 4;
+            double midY = (p1.y + p2.y + p3.y + p4.y) / 4.0;
 
             if (p1.y < midY) ret.add(p1);
             if (p2.y < midY) ret.add(p2);

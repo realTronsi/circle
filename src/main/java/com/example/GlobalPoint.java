@@ -2,7 +2,7 @@ package com.example;
 
 public class GlobalPoint {
     // Everything relative to camera right now
-    double z = 104 - 31.25; // INCHES
+    double z = 104.0 - 31.25; // INCHES
 
     double x;
     double y;
