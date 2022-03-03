@@ -8,14 +8,18 @@ public class Vision {
     private double cameraWidthInches = 1280;
     private double cameraHeightInches = 720;
     private double diagonalFovRadians = 68.5 * Math.PI / 180;
+    private double aspectRatio = 16.0/9.0;
 
-    private double horizontalFov = Math.atan(Math.tan(diagonalFovRadians / 2) * (16/9)) * 2;
-    private double verticalFov = Math.atan(Math.tan(horizontalFov / 2) * (16/9)) * 2;
+    private double horizontalFov = Math.atan(Math.tan(diagonalFovRadians / 2) * (aspectRatio)) * 2;
+    private double verticalFov = Math.atan(Math.tan(horizontalFov / 2) * (aspectRatio)) * 2;
 
     private double vph = 2 * Math.tan(horizontalFov / 2);
     private double vpw = 2 * Math.tan(verticalFov / 2);
 
     public double[] runTestCase(Test test) {
+        System.out.println(horizontalFov);
+        System.out.println(verticalFov);
+
         List<TargetCorner> corners = test.getParsedCorners();
 
         List<GlobalPoint> globalPoints = new ArrayList<>();
