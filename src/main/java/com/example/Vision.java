@@ -21,8 +21,8 @@ public class Vision {
         List<GlobalPoint> globalPoints = new ArrayList<>();
         for (TargetCorner corner : corners) {
             // + 0.5 for 1 unit pixel plane
-            double nx = (1.0 / 1280.0) * (corner.x - 1280.0 + 0.5);
-            double ny = (1.0 / 720.0) * (720.0 - corner.y + 0.5);
+            double nx = (1.0 / cameraWidthInches) * (corner.x - cameraWidthInches + 0.5);
+            double ny = (1.0 / cameraHeightInches) * (cameraHeightInches - corner.y + 0.5);
             // coordinates on imaginary view plane
             double x = vpw / 2 * nx;
             double y = vph / 2 * ny;

@@ -37,5 +37,6 @@ public class App
         System.out.println("FLOOR DISTANCE TO TARGET IN FEET: " + Math.sqrt(
             ret[0]*ret[0]+ret[1]*ret[1]
         ));
+        System.out.println("RADIUS OF TARGET IN FEET: " + ret[2]/12);
     }
 }
