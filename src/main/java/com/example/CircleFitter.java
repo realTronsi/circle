@@ -61,6 +61,8 @@ public class CircleFitter {
         Y.set(1, 0, index2);
         Y.set(2, 0, index3);
 
+        if(X.determinant() == 0) return null;
+
         // Circle Fit calculations
         double[] ret = new double[3];
 

@@ -8,7 +8,7 @@ public class GlobalPoint {
     double y;
 
     public GlobalPoint(double yaw, double pitch) {
-        double d = z / (Math.tan(pitch) * Math.cos(yaw));
+        double d = z / (Math.tan(pitch)); //*Math.cos(yaw)
 
         x = Math.cos(yaw) * d;
         y = Math.sin(yaw) * d;
