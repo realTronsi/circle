@@ -45,8 +45,8 @@ public class Vision {
             double x = vpw / 2.0 * nx;
             double y = vph / 2.0 * ny;
 
-            // double pitch = Math.atan2(1.0, x);
-            // double yaw = Math.atan2(1.0, y);
+            //double yaw = Math.atan2(1.0, x);
+            //double pitch = Math.atan2(1.0, y);
             //double pitch = -Math.atan(x - (vpw/2.0)) + horizontalFov/2.0;
             //double yaw = -Math.atan(y - (vph/2.0)) + verticalFov/2.0;
 
@@ -55,12 +55,12 @@ public class Vision {
             double thingx = x >= 0 ? vpw2 - x : -(vpw2) - x;
             double thingy = y >= 0 ? vph2 - y : -(vph2) - y;
 
-            double pitch = Math.atan(thingx);
-            double yaw = Math.atan(thingy);
+            double yaw = Math.atan(thingx);
+            double pitch = Math.atan(thingy);
 
             System.out.println("PITCH: " + Math.toDegrees(pitch));
             System.out.println("YAW: " + Math.toDegrees(yaw));
-            globalPoints.add(new GlobalPoint(yaw, pitch + Math.toRadians(65)));
+            globalPoints.add(new GlobalPoint(yaw, pitch + Math.toRadians(60)));
         }
         return CircleFitter.calculateCircle(globalPoints);
     }
