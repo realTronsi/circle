@@ -17,6 +17,12 @@ public class Vision {
     private double vpw = 2.0 * Math.tan(horizontalFov / 2.0);
     private double vph = 2.0 * Math.tan(verticalFov / 2.0);
 
+    private double cpitch;
+
+    Vision(double cpitch) {
+        this.cpitch = cpitch;
+    }
+
     public double[] runTestCase(Test test) {
         List<TargetCorner> corners = test.getParsedCorners();
 
@@ -50,17 +56,21 @@ public class Vision {
             //double pitch = -Math.atan(x - (vpw/2.0)) + horizontalFov/2.0;
             //double yaw = -Math.atan(y - (vph/2.0)) + verticalFov/2.0;
 
-            double vpw2 = vpw/2.0;
-            double vph2 = vph/2.0;
-            double thingx = x >= 0 ? vpw2 - x : -(vpw2) - x;
-            double thingy = y >= 0 ? vph2 - y : -(vph2) - y;
 
-            double yaw = Math.atan(thingx);
-            double pitch = Math.atan(thingy);
+            // double vpw2 = vpw/2.0;
+            // double vph2 = vph/2.0;
+            // double oppositex = x >= 0 ? vpw2 - x : -(vpw2) - x;
+            // double oppositey = y >= 0 ? vph2 - y : -(vph2) - y;
 
-            System.out.println("PITCH: " + Math.toDegrees(pitch));
-            System.out.println("YAW: " + Math.toDegrees(yaw));
-            globalPoints.add(new GlobalPoint(yaw, pitch + Math.toRadians(60)));
+            double yaw = Math.atan(x);
+            double pitch = Math.atan(y);
+
+            // System.out.println("PITCH: " + Math.toDegrees(pitch));
+            // System.out.println("YAW: " + Math.toDegrees(yaw));
+            globalPoints.add(new GlobalPoint(yaw, pitch + Math.toRadians(cpitch)));
+        }
+        for(GlobalPoint point : globalPoints) {
+            // System.out.println("X: " + point.x + " Y: " + point.y);
         }
         return CircleFitter.calculateCircle(globalPoints);
     }

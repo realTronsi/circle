@@ -73,11 +73,11 @@ public class CircleFitter {
         C = M.get(2);
 
         // k value
-        ret[0] = A / 2;
+        ret[0] = A / 2.0;
         // m value
-        ret[1] = B / 2;
+        ret[1] = B / 2.0;
         // radius
-        ret[2] = Math.sqrt(4 * C + A * A + B * B) / 2;
+        ret[2] = Math.sqrt(4 * C + A * A + B * B) / 2.0;
         // Units are in inches, radius tolerance
         //if (Math.abs(ret[2] - 2) > 300) return null;
 

@@ -8,10 +8,15 @@ public class GlobalPoint {
     double y;
 
     public GlobalPoint(double yaw, double pitch) {
-        double d = z / (Math.tan(pitch)); //*Math.cos(yaw)
+        double d = (z / (Math.tan(pitch))) * Math.cos(yaw);
+
+        // System.out.println(d);
 
         x = Math.cos(yaw) * d;
         y = Math.sin(yaw) * d;
+
+        // x = z / Math.tan(pitch);
+        // y = x * Math.tan(yaw);
     }
 
     public double getX() {
