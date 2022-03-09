@@ -8,7 +8,7 @@ public class App
     public static void main( String[] args )
     {   
         double mode = 1; // 0 = show true values, 1 = show differences
-        double[] labels = { 82, 130 };
+        double[] labels = { 82, 130, 106 };
 
         double[][] data = {
             {
@@ -58,6 +58,32 @@ public class App
                 831, 442,
                 809, 442,
                 831, 420
+            },
+            {
+                422, 333,
+                394, 358,
+                394, 333,
+                422, 358,
+
+                503, 309,
+                464, 330,
+                464, 309,
+                503, 330,
+
+                554, 307,
+                595, 321,
+                554, 321,
+                595, 307,
+
+                643, 317,
+                679, 339,
+                643, 339,
+                679, 317,
+
+                714, 344,
+                735, 368,
+                714, 368,
+                735, 344
             }
         };
         Vision vision = new Vision(37);
